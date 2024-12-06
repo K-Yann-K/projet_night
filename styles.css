@@ -54,18 +54,28 @@ body{
     position: absolute;
     width: 100px; 
     height: 100px; 
-    bottom: 10px; /* Adjust to position it near the water */
-    left: 1150px; /* Center relative to the boat */
-    transform-origin: top center; /* Pivot for tilting */
+    bottom: -111px; /* Relative to boat-wrapper */
+    left: 190%; /* Centered under the boat */
+    transform: translateX(-50%) rotate(-60deg);
     background-size: contain;
     background-repeat: no-repeat;
-    z-index: 15; /* Ensure it's above the water */
-    animation: net-trail 6s ease-in-out infinite; /* Add trailing motion */
-    opacity: 1; /* Start fully visible */
-    transition: opacity 2.5s ease; /* Smooth fade effect */
+    animation: net-trail 6s ease-in-out infinite;
+    z-index: 15;
 }
 
-
+.boat-wrapper {
+    position: absolute;
+    bottom: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px; /* Matches boat width */
+    height: 800px; /* Matches boat height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Aligns the net below the boat */
+    z-index: 15;
+}
 
 
 .fish-net-line {
@@ -73,11 +83,10 @@ body{
     width: 3px; /* Thickness of the line */
     height: 190px; /* Length of the line */
     background-color: black; /* Line color */
-    bottom: 26px; /* Position to align with the net */
-	left: 1010px;
-    transform-origin: top; /* Rotate from the top */
-    transform: rotate(-53deg); /* Match net's tilt */
-    z-index: 16; /* Ensure it stays above the water */
+    bottom: -93px; /* Aligns with fish-net */
+    left: 158%; /* Centered under the boat */
+    transform: translateX(-50%) rotate(-53deg);
+    z-index: 15;
 }
 
 .animation-wrapper{
@@ -94,16 +103,19 @@ body{
     left: 0;
 	position: absolute;
     width: 100%;
+    z-index: 15;
 }
 
 .water ul.waves{
 	list-style: none;
 	margin: 0;
 	padding: 0;
+    z-index: 15;
 }
 
 .water ul.waves li{
 	background-repeat: repeat-x;
+    z-index: 15;
 }
 
 .water ul.waves li.wave-one{
@@ -163,11 +175,12 @@ body{
     background-repeat: no-repeat;
     background-size: contain; /* Adjust as needed */
     /* background-position: center; */
-    bottom: 145px;
+    bottom: -10px;
     height: 270px;
     left: 50%;
     position: absolute;
     width: 300px;
+    z-index: 10;
 }
 
 
